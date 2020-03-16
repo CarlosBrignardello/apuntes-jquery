@@ -1,0 +1,26 @@
+.houses .img-container{
+  margin-top: 2rem;
+  width: 100%;
+  color: red;
+  height: 300px;
+  background-size: cover;
+}
+.one{
+  background-image: url('./img/baratheon.png');
+  background-position: -270px 0px;
+}
+.two{
+  background-image: url('./img/lannister.jpg');
+  background-position: -140px 0px;
+}
+.third{
+  background-image: url('./img/stark.jpg');
+  background-position: -150px 0px;
+}
+.four{
+  background-image: url('./img/targaryen.jpg');
+  background-position: -140px 0px;
+}
+.house-info{
+  padding-top: 2rem;
+}

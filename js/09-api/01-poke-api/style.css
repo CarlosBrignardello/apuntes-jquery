@@ -1,0 +1,14 @@
+.poke-container{
+  background-color: rgb(240, 240, 240);
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+img{
+  width: 100%;
+}
+p{
+  color: black;
+}

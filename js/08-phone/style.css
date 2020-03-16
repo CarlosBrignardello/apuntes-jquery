@@ -1,0 +1,51 @@
+header{
+  background-color: #333333;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+header h1{
+  font-size: 1.5rem;
+}
+body{
+  background-color: #fff;
+}
+main{
+  background-color: #fff;
+  padding: 10px;
+}
+main textarea{
+  display: block;
+  width: 100%;
+}
+.btn-add{
+  display: flex;
+  justify-content: center;
+}
+.btn-add button{
+  color: white;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+}
+img{
+  width: 16px;
+}
+.checks{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+.checks p{
+  margin: 0;
+}
+.tareas{
+  margin-top: 180px
+}
+.tachar{
+  text-decoration: line-through;
+}

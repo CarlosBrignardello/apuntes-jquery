@@ -1,0 +1,13 @@
+.formulario{
+  margin-top: 15%;
+  align-items: center;
+}
+label{
+  margin: 8px 1rem;
+  font-size: 1.5rem;
+}
+.respuesta{
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+}

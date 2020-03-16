@@ -75,7 +75,7 @@ $('#chat').hide()
 **Mostrar un elemento:**
 
 ```js
-$('#chat').hide()
+$('#chat').show()
 ```
 
 **Mostrar un elemento hacia abajo con animación:**
@@ -84,12 +84,16 @@ $('#chat').hide()
 $('#chat').slideDown(2000)
 ```
 
-
-
 **Ocultar un elemento con animación:**
 
 ```js
 $('#chat').slideUp(2000)
+```
+
+**Alternar animación:**
+
+```js
+$('#chat').slideToggle(2000)
 ```
 
 **Seleccionar elementos:**
@@ -172,148 +176,127 @@ $(document).ready(() =>{
 
 
 
+fadeUp()
+
+fadeIn()
+
+parent()
+
+
+
+
+
 **Obtener valor de un atributo:**
 
 ```js
 $('input').attr('placeholder') // Obtenemos el valor de un atributo.
 $('img').attr("src", "cat.png") // Obtener y fijar los valores de un atributo.
-```
-
-
-
-
-
-**Operar con JQuery**
-
-```js
-console.log($)
-```
-
-Con `$` accedemos a toda la librería jQuery. Todo lo que hacemos con jQuery tiene que ser precedido por un `$`. Luego, puedes utilizar jQuery agregando () después de $.
-
-
-
-```js
-console.log($())
-```
-
-Con `$()` seleccionamos una etiqueta HTML. Si quisiéramos seleccionar la etiqueta, tendríamos que escribir `$('body')`. Este selector puede tomar cualquier etiqueta de HTML. Veremos la distintas formas en que podemos tomar ítems de HTML. 
-
-
-
-```js
-$('body').click(function(){
-    // acá irá más código 
-});
- $(document).ready(function(){
- });
-```
-
-Dentro de las llaves {} de la función de más arriba, es donde debes insertar **todas** las funciones de jQuery. Este código hace que el navegador ejecute las funciones de jQuery cuando el documento en sí mismo esté listo. Por "listo" nos referimos a cuando el documento se carga completamente. Esto es **muy importante** porque si no usas la función **ready()**, tu código correrá antes de que el contenido en HTML que escribiste se procese, por lo que el navegador ejecutará código para HTML que todavía no existe.
-
-
-
-**Selecciona los elementos/clase/id de HTML:**
-
-Entonces, para seleccionar todos los botones (buttons) de tu página web, escribe:
+$('input').val('placeholder') // Obtenemos el valor de un atributo.
 
 ```
- $('button')
-```
-
-¡Eso es! Ahora puedes agregar todo tipo de propiedades funcionales a tus botones ¿Qué sucede si quieres seleccionar todos los botones con el nombre de clase *blue*? ¡Lo mismo que en CSS!:
-
-```
- $('button.blue')
-```
-
-¡Fácil! Ahora, si quieres seleccionar todos los botones y elementos con la clase *blue*, haz lo siguiente:
-
-```
- $('button, .blue')
-```
-
-Y si quieres seleccionar un HTML con un ID, así es como lo hacemos. 
-
-```
- $('#red')
-```
 
 
 
-#### Agrega un controlador de eventos
 
-Ahora que hemos seleccionado algo usando el selector jQuery, podemos agregar un "event listener". Recuerda, jQuery y JavaScript hacen que un sitio web sea interactivo, y así es como definimos qué sucede con esas interacciones. Un **Event listener** es un detonante para todo el código que deseamos escribir involucrando al elemento que seleccionamos. El event listener para un botón siendo cloqueado:
+
+
+
+
+
+Getters y Setters 
+
+Algunas funciones actuan como getters o setters dependiendo de si se les pasa o no un parametro, por ejemplo text e html.
+
+
+
+
+
+# $(this)
+
+Considera los siguiente códigos de HTML:
 
 ```
- $('button').click();  //**¡ahora el documento está "escuchando" (listening) un evento clic para el elemento button (botón)!**
+<img src="image1.jpg" />
+<img src="image2.jpg" />
+<img src="image3.jpg" />
+<img src="image4.jpg" />
+<img src="image5.jpg" />
 ```
 
-Ahora, hemos hecho que jQuery escuche cualquier botón para ser cliqueado. Hemos configurado un event listener para todos los botones utilizando jQuery. 
+Digamos que quieres que tu app funcione de tal forma que cuando los usuarios hagan clic en un imagen, esa imagen específica desaparezca ¿Cómo harías eso?
 
-#### ¡Escribe la acción!
-
-La última parte es la acción que queremos que nuestra página realice cuando este evento es activado ¿Entonces qué sucede ahora? ¿Qué pasa cuando hacemos clic en un botón de nuestra página? ¡Nada todavía porque no hemos escrito código respecto a lo que queremos que suceda! Bueno, hagamos que algo suceda, agreguemos una acción. 
+Una forma es cambiar tu HTML, entonces agregamos un ID único para cada imagen y añadimos un código jQuery como el siguiente:
 
 ```
- $('button').click(function(){
-    alert("#¡Haz cliqueado un botón!");
- });
-```
-
-Ahora, cuando hagas clic en un botón de tu página, deberías ver una ventana emergente con el mensaje que insertamos. Ponemos el código dentro de **function(){}** para decirle a jQuery que queremos ejecutar una función cuando el botón es cliqueado ¡Dentro de esa función escribimos el código que hace que el sitio web sea interactivo! Si queremos poner parámetros a la función, los especificamos en el paréntesis ¡Eso es! Así es como empiezas a incorporar jQuery en tus sitios web. Tómate unos minutos para revisar la sintaxis de esta función, puesto que hay muchos paréntesis y llaves para tener en cuenta. 
-
-#### **Ten en cuenta el flujo básico de utilizar jQuery:\**\*\*Selecciona el \*elemento,\* \*clase\* o \*id\* utilizando el selector jQuery.\*\**\* \**Agrega un event listener: ¿Cómo quieres que este evento sea activado?\**\**Escribe el código sobre lo que quieres que suceda cuando el evento sea activado\****
-
-
-
-Ciertas funciones de jQuery puede comportarse diferente dependiendo si las ejecutas con parámetros o no. Para demostrar esto, utilicemos el siguiente código:l
-
-```
-<script>
-    $(document).ready(function(){
-        $('#myParagraph').text();
-    });
-</script>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#image1').click(function(){
+                $('#image1').hide();
+            });
+            $('#image2').click(function(){
+                $('#image2').hide();
+            });
+            $('#image3').click(function(){
+                $('#image3').hide();
+            });
+            $('#image4').click(function(){
+                $('#image4').hide();
+            });
+            $('#image5').click(function(){
+                $('#image5').hide();
+            });
+        });
+    </script>
+</head>
 <body>
-    <p id='myParagraph'> ¡Este es mi párrafo! </p>
+    <img src="image1.jpg" id="image1" />
+    <img src="image2.jpg" id="image2" />
+    <img src="image3.jpg" id="image3" />
+    <img src="image4.jpg" id="image4" />
+    <img src="image5.jpg" id="image5" />
 </body>
 ```
 
-Fíjate que el texto *myParagraph* se mantendrá igual, aunque sabemos que **.text()** puede ser usado para cambiar el valor de texto de los elementos HTML. Esto es porque cuando llamamos a la función **.****text()** sin un parámetro, la función se comportará como una función **getter.** Esta función devolverá el valor de texto del párrafo llamado mi *myParagraph.* Para ilustrar esto, ejecutemos el siguiente código:
+¡Pero el código anterior es redundante! ¿Qué pasaría si hubiese una forma en que pudiéramos escoger el elemento específico dentro del selector que desencadenó el evento? But the above code is redundant! What if there is a way we can choose the particular element within the selector that triggered the event? Existe, y se llama $(this). $(this) selecciona ese elemento particular que desencadena el evento. Utilizando esto, podemos limpiar el código anterior como puedes ver a continuación: 
 
 ```
-<script>
-  $(document).ready(function(){
-      var myText = $('#myParagraph').text();
-      alert(myText);
-  })
-</script>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        //adjunta un "click event listener" a todas las etiquetas img cuando el documento esté listo
+            $('img').click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
 <body>
-    <p id='myParagraph'> ¡Este es mi párrafo! </p>
+    <img src="image1.jpg" />
+    <img src="image2.jpg" />
+    <img src="image3.jpg" />
+    <img src="image4.jpg" />
+    <img src="image5.jpg" />
 </body>
 ```
 
-Ahora, cuando cargues esa página, verás el contenido de *myParagraph* en una ventana emergente en la pantalla. El uso del término 'función getter' significa que la función ***toma (get)\*** el valor de un ítem particular y lo devuelve, lo que explica que hayamos podido obtener el valor del texto y asignarlo a la variable *myText.*
+Este es un ejemplo de cómo optimizar tu código jQuery. Así, nunca tienes que escribir el mismo código 2 veces. De esta manera, si aprovechas el poder del selector **$(this)**, puedes acortar bastante el número de línea de código.  
 
-La otra forma de usar la función **.text()** es una función **setter.** Tal vez te encuentres usando **.text()** en esta capacidad más como **getter.** Para demostrar el uso de **.text()** como setter, mira el siguiente código:
 
-```js
-<script>
-  $(document).ready(function(){
-      $('button').click(function(){
-          $('#myParagraph').text('mira como I .text() funciona como setter!');
-      })
-  })
-</script>
-<body>
-    <p id='myParagraph'> ¡Este es mi párrafo! </p>
-    <button> ¡Cliquéame para cambiar el párrafo! </button>
-</body>
-copy
-```
 
-¿Ves la diferencia? Al ejecutar **.text()** con un valor dentro del paréntesis, **establecemos** el valor del atributo seleccionado. Esta es la diferencia entre usar **.text()** como getter o como setter. Utiliza la documentación de jQuery para averiguar si una función particular se comporta de manera distinta dependiendo de los parámetros con la que la ejecutes. 
+
+
+
+
+
+
+
+
+
 
 
 

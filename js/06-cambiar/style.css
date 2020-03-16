@@ -1,0 +1,19 @@
+.bg{
+  width: 500px;
+  height: 100px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/ff/Augusto_Pinochet_foto_oficial.jpg);
+  background-size: cover;
+  margin: 10px;
+}
+.background-two{
+  background-position-y: -110px;
+}
+.background-three{
+  background-position-y: -220px;
+}
+.background-four{
+  background-position-y: -330px;
+}
+.alt{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/8a/Retrato_Oficial_Presidente_Pi%C3%B1era_2018.jpg);
+}
